@@ -1,45 +1,40 @@
-function encriptarPalavra(palavra, chave) {
-    let alfabeto = [
-        'a',
-        'b',
-        'c',
-        'd',
-        'e',
-        'f',
-        'g',
-        'h',
-        'i',
-        'j',
-        'k',
-        'l',
-        'm',
-        'n',
-        'o',
-        'p',
-        'q',
-        'r',
-        's',
-        't',
-        'u',
-        'v',
-        'w',
-        'x',
-        'y',
-        'z'
-    ]
+const ARRAY_ALPHABET = [
+    'a',
+    'b',
+    'c',
+    'd',
+    'e',
+    'f',
+    'g',
+    'h',
+    'i',
+    'j',
+    'k',
+    'l',
+    'm',
+    'n',
+    'o',
+    'p',
+    'q',
+    'r',
+    's',
+    't',
+    'u',
+    'v',
+    'w',
+    'x',
+    'y',
+    'z'
+]
 
-    let arrayPalavra = palavra.split('')
-    let arrCriptografado = []
+const encryptWord = (word, key) => {
+    let fragmentedWord = word.split('')
+    let encryptArr = new Array()
 
-    for (let i = 0; i < arrayPalavra.length; i++) {
-        for (let x = 0; x < alfabeto.length; x++) {
-            if (arrayPalavra[i] === alfabeto[x]) {
-                arrCriptografado.push(alfabeto[x + chave])
-            }
-        }
-    }
-
-    return arrCriptografado.join('')
+    for (let word in fragmentedWord)
+        encryptArr.push(ARRAY_ALPHABET[ARRAY_ALPHABET.indexOf(fragmentedWord[word]) + key])
+    
+    return encryptArr.join('')
 }
 
 // Inicio do teste.
@@ -47,18 +42,19 @@ function encriptarPalavra(palavra, chave) {
 
 const { performance } = require('perf_hooks')
 
-let inicioTeste = performance.now()
+let startTest = performance.now()
 
-console.log(`Palavra criptografada: ${encriptarPalavra('gato', 3)}`)
+console.log(`Palavra criptografada: ${encryptWord('gato', 3)}`)
 
-let fimTeste = performance.now()
+let endTest = performance.now()
+
 console.log(
-    `a função demorou ${(fimTeste - inicioTeste).toFixed(
+    `a função demorou ${(endTest - startTest).toFixed(
         2
     )} ms para ser executada`
 )
-// SAIDA: a função demorou 3.21 ms para ser executada
-// OUTPUT: the function took 3.21 ms to execute
+// SAIDA: a função demorou 2.53 ms para ser executada
+// OUTPUT: the function took 2.53 ms to execute
 
 // Fim do teste.
 // End of test.
