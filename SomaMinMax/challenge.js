@@ -1,31 +1,14 @@
 const arrayNumbers = [1, 2, 3, 4, 5]
 
-function filterMinMaxNumbers() {
-    let sumOfArrayNumbers = []
+const minMaxSum = arr => {
+    let resultOfArrayNumbersSum = []
 
-    for (let i = 0; i < arrayNumbers.length; i++) {
-        let sumNumberArray = 0
-
-        arrayNumbers.forEach(function (value) {
-            value !== arrayNumbers[i]
-                ? (sumNumberArray += value)
-                : (sumNumberArray += 0)
-        })
-        sumOfArrayNumbers.push(sumNumberArray)
+    for (let number of arr) {
+        let filteredArray = arr.filter(value => value !== number)
+        resultOfArrayNumbersSum.push(filteredArray.reduce((acumulator, currentValue) => acumulator + currentValue))
     }
-
-    let max = 0
-    for (let number of sumOfArrayNumbers) {
-        if (number > max) max = number
-    }
-
-    let min = max
-    for (let number of sumOfArrayNumbers) {
-        if (number < min) min = number
-    }
-
-    return ['min: ' + min, 'max: ' + max]
+    return [`min: ${Math.min(...resultOfArrayNumbersSum)}`, `max: ${Math.max(...resultOfArrayNumbersSum)}`]
 }
 
-console.log(filterMinMaxNumbers())
+console.log(minMaxSum(arrayNumbers))
 // return ['min: 10', 'max: 14']
