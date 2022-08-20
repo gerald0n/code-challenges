@@ -5,9 +5,11 @@ function filterMinMaxNumbers() {
 
     for (let i = 0; i < arrayNumbers.length; i++) {
         let sumNumberArray = 0
-        
+
         arrayNumbers.forEach(function (value) {
-                value !== arrayNumbers[i] ? (sumNumberArray += value): (sumNumberArray += 0)
+            value !== arrayNumbers[i]
+                ? (sumNumberArray += value)
+                : (sumNumberArray += 0)
         })
         sumOfArrayNumbers.push(sumNumberArray)
     }
@@ -27,12 +29,3 @@ function filterMinMaxNumbers() {
 
 console.log(filterMinMaxNumbers())
 // return ['min: 10', 'max: 14']
-
-
-
-
-
-
-
-
-
