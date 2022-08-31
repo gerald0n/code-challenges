@@ -5,4 +5,4 @@ const minMaxSum = (arr, resultOfArrayNumbersSum = []) => {
     return [`min: ${Math.min(...resultOfArrayNumbersSum)}`, `max: ${Math.max(...resultOfArrayNumbersSum)}`]
 }
 
-console.log(minMaxSum(arrayNumbers)) // return ['min: 10', 'max: 14']
+console.log(minMaxSum(arrayNumbers)) // return ['min: 10', 'max: 14']ṕ
