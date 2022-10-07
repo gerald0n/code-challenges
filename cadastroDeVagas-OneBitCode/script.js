@@ -1,6 +1,6 @@
 let condicao = true
 
-const listaDeVagas = [
+var listaDeVagas = [
     {
         nome: 'Desenvolvedor Front-end Júnior',
         descricao:
@@ -38,13 +38,13 @@ const listarVagas = vagas => {
 }
 
 const mostrarVagaIndividual = indice => {
-    console.log(`
+    return `
 VAGA índice ${indice}:
 nome: ${listaDeVagas[indice].nome}
 descrição: ${listaDeVagas[indice].descricao}
 Disponível até: ${listaDeVagas[indice].dataLimite}
 ${listaDeVagas[indice].qtdDeCandidatosInscritos} inscritos:
-${listaDeVagas[indice].listaDeCandidatos}`)
+${listaDeVagas[indice].listaDeCandidatos}`
 }
 const adicionarNovaVaga = (
     nome,
@@ -88,7 +88,7 @@ do {
             let selectDeVaga = prompt(
                 'digite o índice da vaga que deseja ver: '
             )
-            mostrarVagaIndividual(selectDeVaga)
+            console.log(mostrarVagaIndividual(selectDeVaga))
             break
         case 4:
             let nomeDoNovoCandidato = prompt('Nome do novo candidato: ')
@@ -109,6 +109,17 @@ do {
             }
             break
         case 5:
+            listarVagas(listaDeVagas)
+            let indiceASerExcluido = prompt(
+                'digite o indice da vaga que deseja excluir: '
+            )
+            let confirmarExclusao =
+                confirm(`Vaga ser excluída: ${mostrarVagaIndividual(
+                    indiceASerExcluido
+                )}
+            Deseja excluir?`)
+            if (confirmarExclusao) listaDeVagas.splice(indiceASerExcluido, 1)
+            else prompt('Operação Cancelada!')
             break
         case 6:
             condicao = false
