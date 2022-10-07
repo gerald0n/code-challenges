@@ -1,5 +1,10 @@
 #Descrição do desafio
-obs.: para visualizar as saídas, abra o console do navegador.
+
+- OBS 1.: para visualizar as saídas, abra o console do navegador.
+
+- OBS 2.: O desafio não tinha tempo limitado, mas, para fins de teste, adicionei um cronometro de 10 minutos para conclusão do processo. Ao final do prazo, faltou a funcionalidade de excluir uma vaga; foi implementada após o prazo.
+
+- OBS 3.: Para concluir o desafio a tempo, não foi dado prioridade a estrutura do projeto ou seguido normas e/ou padrões. O priorizado foi a resolução do problema proposto no desafio. Posteriormente será feito novos pushs com o projeto refatorado.
 
 Escreva um programa em javascript que simule um sistema de vagas de emprego, onde é possível gerenciar as vagas e adicionar candidatos às vagas. Ele deve atender aos sequintes requisitos:
 
@@ -17,6 +22,6 @@ Escreva um programa em javascript que simule um sistema de vagas de emprego, ond
 -   A opção de excluir uma vaga deve pedir o índice da vaga, mostrar suas informações e pedir que o usuário confirme a exclusão da vaga antes de realmente exclui-la.
     Este é o exercício de revisão do módulo, então aproveite para utilizar todos os recursos vistos até agora sempre que possível, como os objetos, arrays e funções.
 
-O desafio não tinha tempo limitado, mas, para fins de teste, adicionei um cronometro de 10 minutos para conclusão do processo.
 
-Ao final do prazo, faltou a funcionalidade de excluir uma vaga; foi implementada após o prazo.
+
+
